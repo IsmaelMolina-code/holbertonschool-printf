@@ -27,8 +27,6 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			if (*(format + 1) == '\0')
-				return (-1);
 			format++;
 			for (i = 0; i < (int)(sizeof(conversions) / sizeof(Conversion)); i++)
 			{
