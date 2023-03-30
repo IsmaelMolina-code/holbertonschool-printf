@@ -32,13 +32,6 @@ int print_string(va_list args)
 
 	int i;
 
-	if (s == NULL)
-	{
-		s = "(null)";
-		write(1, s, 6);
-		return (6);
-	}
-
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
