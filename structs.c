@@ -1,11 +1,4 @@
 #include "main.h"
-#include "aux_funcs.c"
-
-typedef struct
-{
-	char specifier;
-	int (*func)(va_list);
-}Conversion;
 
 int print_char(va_list args)
 {
@@ -21,15 +14,9 @@ int print_string(va_list args)
 	return _strlen(s);
 }
 
-int print_perc(void)
+int print_perc(va_list args)
 {
+	(void)args;
 	_putchar('%');
 	return (1);
 }
-
-Conversion conversions[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_perc},
-	{'\0', NULL}
-};

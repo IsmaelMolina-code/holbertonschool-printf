@@ -1,6 +1,4 @@
 #include "main.h"
-#include "structs.c"
-#include "aux_funcs.c"
 
 /**
  * _printf - function that prints
@@ -13,16 +11,24 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	va_start(args, format);
 
 	int count = 0, i;
+
+	Conversion conversions[] = {
+        {'c', print_char},
+        {'s', print_string},
+        {'%', print_perc},
+        {'\0', NULL}
+	};
+
+	va_start(args, format);
 
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			for (i = 0; i < sizeof(conversions) / sizeof(Conversion); i++)
+			for (i = 0; i < (int)(sizeof(conversions) / sizeof(Conversion)); i++)
 			{
 				if (*format == conversions[i].specifier)
 				{
