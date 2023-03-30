@@ -11,18 +11,15 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-
 	int count = 0, i;
-
 	Conversion conversions[] = {
-        {'c', print_char},
-        {'s', print_string},
-        {'%', print_perc},
-        {'\0', NULL}
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_perc},
+	{'\0', NULL}
 	};
 
 	va_start(args, format);
-
 	if (format == NULL)
 		return (-1);
 
@@ -31,9 +28,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			if (*(format + 1) == '\0')
-			{
 				return (-1);
-			}
 			format++;
 			for (i = 0; i < (int)(sizeof(conversions) / sizeof(Conversion)); i++)
 			{
@@ -54,5 +49,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-	return count;
+	return (count);
 }

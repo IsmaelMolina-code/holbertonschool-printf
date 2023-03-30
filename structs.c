@@ -1,15 +1,35 @@
 #include "main.h"
 
+/**
+ * print_char - prints a char
+ *
+ * @args: argument
+ *
+ * Return: one
+ *
+ */
+
 int print_char(va_list args)
 {
 	char c = (char) va_arg(args, int);
+
 	_putchar(c);
 	return (1);
 }
 
+/**
+ * print_string - prints a string
+ *
+ * @args: argument
+ *
+ * Return: one
+ *
+ */
+
 int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
+
 	int i;
 
 	if (s == NULL)
@@ -23,8 +43,17 @@ int print_string(va_list args)
 	{
 		_putchar(s[i]);
 	}
-	return _strlen(s);
+	return (_strlen(s));
 }
+
+/**
+ * print_perc - prints a percentage
+ *
+ * @args: argument
+ *
+ * Return: one
+ *
+ */
 
 int print_perc(va_list args)
 {
