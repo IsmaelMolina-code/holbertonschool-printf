@@ -1,5 +1,4 @@
 #include "main.h"
-#include "aux_funcs.c"
 
 typedef struct
 {
@@ -16,12 +15,12 @@ int print_char(va_list args)
 
 int print_string(va_list args)
 {
-	char *s = va_arg(args, char *);
+	char s = va_arg(args, char);
 	fputs(s, stdout);
 	return _strlen(s);
 }
 
-int print_perc(void)
+int print_perc(va_list args)
 {
 	_putchar('%');
 	return (1);
