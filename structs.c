@@ -35,8 +35,8 @@ int print_string(va_list args)
 	if (s == NULL)
 	{
 		s = "(null)";
-		write(1, &s, 1);
-		return (1);
+		write(1, &s, 6);
+		return (6);
 	}
 
 	for (i = 0; s[i] != '\0'; i++)
