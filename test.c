@@ -81,6 +81,14 @@ int main(void)
 	b = _printf("%%");
 	cont = cont + output(a,b);
 	printf("\n---------------\n");
+	printf("Test 6");
+        printf("\nexpected: ");
+        a = printf("%%s%");
+        printf("\nobtained: ");
+        fflush(stdout);
+        b = _printf("%%s%");
+        cont = cont + output(a,b);
+	printf("\n---------------\n");
 	printf("Test 7");
 	printf("\nexpected: ");
 	a = printf("%%s");
