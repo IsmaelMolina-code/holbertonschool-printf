@@ -15,7 +15,7 @@
  * @func: function pointer
  */
 
-typedef struct Conversion
+typedef struct
 {
 	char specifier;
 	int (*func)(va_list);
