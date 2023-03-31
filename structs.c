@@ -32,17 +32,20 @@ int print_string(va_list args)
 
 	int i;
 
-	if (s == NULL)
+	if (s)
+	{
+
+		for (i = 0; s[i]; i++)
+		{
+			_putchar(s[i]);
+		}
+	}
+	else
 	{
 		s = "(null)";
-		write(1, &s, 6);
-		return (6);
+		write(1, s, 6);
 	}
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		_putchar(s[i]);
-	}
 	return (_strlen(s));
 }
 
