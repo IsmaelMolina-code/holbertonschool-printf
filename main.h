@@ -27,4 +27,5 @@ int print_char(va_list args);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _strlen(const char *s);
+		
 #endif
