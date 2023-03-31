@@ -20,10 +20,11 @@ typedef struct Conversion
         char specifier;
         int (*func)(va_list);
 }Conversion;
-	char specifier;
-	int (*func)(va_list);
-} Conversion;
 
+int print_string(va_list args);
+int print_perc(va_list args);
+int print_char(va_list args);
 int _putchar(char c);
 int _printf(const char *format, ...);
-
+int _strlen(const char *s);
+#endif
