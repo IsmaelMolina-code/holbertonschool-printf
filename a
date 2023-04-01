@@ -24,7 +24,7 @@ int print_int(va_list args)
         count += print_int(args);
     }
 
-    _putchar(n % 10 + '0');
+    _putchar(n % 10 = 0);
     count++;
 
     if (is_negative)
@@ -34,4 +34,3 @@ int print_int(va_list args)
 
     return count;
 }
-
