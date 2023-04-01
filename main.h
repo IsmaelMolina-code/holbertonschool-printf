@@ -21,7 +21,7 @@ typedef struct Conversion
         int (*func)(va_list);
 }Conversion;
 
-int print_i(va_list args, int n);
+int print_i(va_list args, long int n);
 int print_d(va_list args);
 int print_string(va_list args);
 int print_perc(va_list args);

@@ -22,13 +22,10 @@ int _printf(const char *format, ...)
 	if (*format == '%')
 	{
 		format++;
-		if (*format == '\0')
-		{
-			va_end(args);
-			return (-1);
-		}
 		switch (*format)
 		{
+			case '\0':
+				return (-1);
 			case 'c':
 				count += print_char(args);
 				break;
@@ -39,7 +36,7 @@ int _printf(const char *format, ...)
 				count += print_perc(args);
 				break;
 			case 'i':
-				count += print_i(args, va_arg(args, int));
+				count += print_i(args, va_arg(args, long int));
 				break;
 			case 'd':
 				count += print_d(args);
@@ -69,7 +66,7 @@ int _printf(const char *format, ...)
  * Return: int
  */
 
-int print_i(va_list args, int n)
+int print_i(va_list args, long int n)
 {
 	int i = 0;
 	int aux;
@@ -78,7 +75,7 @@ int print_i(va_list args, int n)
 	{
 		_putchar('-');
 		i++;
-		aux = -n;
+		aux = n * -1;
 	}
 	else
 	{
@@ -90,7 +87,7 @@ int print_i(va_list args, int n)
 		i += print_i(args, aux / 10);
 	}
 
-	_putchar((aux % 10) + '0');
+	_putchar(aux % 10 + '0');
 	i++;
 
 	return (i);
@@ -106,7 +103,7 @@ int print_i(va_list args, int n)
 
 int print_d(va_list args)
 {
-	int d = va_arg(args, int);
+	long int d = va_arg(args, long int);
 
 	return (print_i(args, d));
 }
