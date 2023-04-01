@@ -20,11 +20,9 @@ int _printf(const char *format, ...)
 	{'i', print_i_d},
 	{'d', print_i_d}
 	};
-
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -50,7 +48,6 @@ int _printf(const char *format, ...)
 		}
 	format++;
 	}
-
 	va_end(args);
 	return (count);
 }
@@ -66,32 +63,30 @@ int _printf(const char *format, ...)
 
 int print_i_d(va_list args)
 {
-	long int base;
-        int n = va_arg(args, int);
-        char buffer[64];
-        char *p = &buffer[63];
-        int negative = 0;
-        static char digits[] = "0123456789abcdef";
+	int base;
+	int n = va_arg(args, int);
+	char buffer[64];
+	char *p = &buffer[63];
+	int negative = 0;
+	static char digits[] = "0123456789abcdef";
 	
 	if ((n + 1) == 'i')
 		base = 10;
 	if ((n + 1) =='d')
 		base = 2;
-        *p = '\0';
+	*p = '\0';
 
-        if (n < 0 && base == 10) {
-                negative = 1;
-                n = -n;
-        }
+	if (n < 0 && base == 10) {
+	negative = 1;
+		n = -n;
+	}
 
-        do {
-                *--p = digits[n % base];
-                n /= base;
+	do {
+	*--p = digits[n % base];
+	n /= base;
         } while (n != 0);
 
-        if (negative)
-                *--p = '-';
-
-        return write(1, p, 63);
+	if (negative)
+		*--p = '-';
+	return write(1, p, 63);
 }
-
