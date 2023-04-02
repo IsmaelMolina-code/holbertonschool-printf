@@ -13,42 +13,63 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 
-	if (format == NULL || *format == '\0')
+	if (format == NULL || !format)
 		return (-1);
+
 	va_start(args, format);
+
+	count = cases_func((char *) format, args);
+
+	va_end(args);
+	return (count);
+}
+/**
+ * cases_func - the main function that do like printf
+ *
+ * @format: char of the printf
+ *
+ * @args: argument list
+ *
+ * Return: count
+ */
+
+int cases_func(char *format, va_list args)
+{
+	int count = 0;
 
 	while (*format)
 	{
-	if (*format == '%')
-	{
-		format++;
-		switch (*format)
+		if (*format == '%')
 		{
-			case 'c':
-				count += print_char(args);
-				break;
-			case 's':
-				count += print_string(args);
-				break;
-			case '%':
-				count += print_perc(args);
-				break;
-			case 'i':
-				count += print_i(args, va_arg(args, int));
-				break;
-			case 'd':
-				count += print_d(args);
-				break;
-			default:
-				count += print_unknown(format[-1]);
-				break;
+			format++;
+			switch (*format)
+			{
+				case '\0':
+					return (-1);
+				case 'c':
+					count += print_char(args);
+					break;
+				case 's':
+					count += print_string(args);
+					break;
+				case '%':
+					count += print_perc(args);
+					break;
+				case 'i':
+					count += print_i(args, va_arg(args, int));
+					break;
+				case 'd':
+					count += print_d(args);
+					break;
+				default:
+					count += print_unknown(format[-1]);
+					break;
+			}
 		}
+		else
+			count += write(1, format, 1);
+		format++;
 	}
-	else
-		count += write(1, format, 1);
-	format++;
-	}
-	va_end(args);
 	return (count);
 }
 

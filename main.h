@@ -21,6 +21,7 @@ typedef struct Conversion
 	int (*func)(va_list);
 } Conversion;
 
+int cases_func(char *format, va_list args);
 int print_i(va_list args, int n);
 int print_d(va_list args);
 int print_string(va_list args);
