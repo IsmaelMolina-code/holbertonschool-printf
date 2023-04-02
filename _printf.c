@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				count += print_perc(args);
 				break;
 			case 'i':
-				count += print_i(args, va_arg(args, long int));
+				count += print_i(args, va_arg(args, int));
 				break;
 			case 'd':
 				count += print_d(args);
@@ -66,16 +66,17 @@ int _printf(const char *format, ...)
  * Return: int
  */
 
-int print_i(va_list args, long int n)
+int print_i(va_list args, int n)
 {
 	int i = 0;
-	int aux;
+	unsigned long int aux;
 
 	if (n < 0)
 	{
-		_putchar('-');
+		write(1, "-", 1);
 		i++;
-		aux = n * -1;
+		aux = -n;
+
 	}
 	else
 	{
@@ -87,7 +88,7 @@ int print_i(va_list args, long int n)
 		i += print_i(args, aux / 10);
 	}
 
-	_putchar(aux % 10 + '0');
+	_putchar((aux % 10) + '0');
 	i++;
 
 	return (i);
