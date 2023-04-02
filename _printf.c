@@ -64,7 +64,7 @@ int cases_func(char *format, va_list args)
 					break;
 				default:
 					count += print_unknown(format[-1]);
-					count++;
+					count += print_unknown(format[0]);
 					break;
 			}
 		}
