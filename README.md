@@ -20,7 +20,8 @@ arguments and converting them into strings of characters.
 | c | characters |
 | s | string |
 | % | percentage |
-| d and i | decimal and inter |
+| i | integer |
+| d | integer in base 10 |
 
 <h1>Requirements</h1>
 
