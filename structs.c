@@ -46,23 +46,21 @@ int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
 
-	int len = 0;
+	int len = 0, i = 0;
 
 	if (!s)
-	{
 		s = "(null)";
-	}
-	while (*s != '\0')
+
+	for (; s[i]; i++)
 	{
-		if (*s == '%')
+		if (s[i] == '%')
 		{
 			len += write(1, "%%", 1);
 		}
 		else
 		{
-			len += write(1, s, 1);
+			len += write(1, &s[i], 1);
 		}
-		s++;
 	}
 	return (len);
 }
