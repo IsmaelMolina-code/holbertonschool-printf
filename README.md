@@ -11,7 +11,7 @@
 <h1>Introduction</h1>
 
 Welcome to our printf function. This project try to replicate and replace the usual printf C's library function.
-The function will take a variable number of arguments, and send back a formatted output stdout, formatting the 
+Thise function will take a variable number of arguments, and send back a formatted output stdout, formatting the 
 arguments and converting them into strings of characters.
 
 
@@ -78,7 +78,7 @@ For running the function, after cloning the repository, is necessary to compile 
 >gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 
 
-After compiling, run de executable on your console, remember that you will need a main function with the arguments to print with the format.
+After compiling, run the executable on your console, remember that you will need a main function with the arguments to print with the format.
 This main function should be on a c file, in the same directory as the repository to the moment of compiling.
 <h1>Collaboration</h1>
 This is a project developed by Ismael Molina and Janis Núñez, for Holberton School Uruguay program.
