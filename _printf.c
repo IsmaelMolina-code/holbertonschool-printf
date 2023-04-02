@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
 /**
  * cases_func - the main function that do like printf
  *
@@ -85,9 +86,15 @@ int cases_func(char *format, va_list args)
 int print_i(va_list args, int n)
 {
 	int i = 0;
-	unsigned long int aux;
+	unsigned int aux;
 
-	if (n < 0)
+	if (n == INT_MIN)
+	{
+		write(1, "-", 1);
+		i++;
+		aux = -(unsigned int)INT_MIN;
+	}
+	else if (n < 0)
 	{
 		write(1, "-", 1);
 		i++;
