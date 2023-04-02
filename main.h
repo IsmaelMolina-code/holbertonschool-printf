@@ -17,9 +17,9 @@
 
 typedef struct Conversion
 {
-        char specifier;
-        int (*func)(va_list);
-}Conversion;
+	char specifier;
+	int (*func)(va_list);
+} Conversion;
 
 int print_i(va_list args, int n);
 int print_d(va_list args);
