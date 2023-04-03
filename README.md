@@ -2,6 +2,7 @@
 <h1>Printf Function</h1>
 <ul>
 <li>Introduction</li>
+<li>Flowchart</li>
 <li>Requirements</li>
 <li>Repository</li>
 <li>Installation & use</li>
@@ -22,6 +23,22 @@ arguments and converting them into strings of characters.
 | % | percentage |
 | i | integer |
 | d | integer in base 10 |
+
+<h1>Flowchart of the function</h1>
+
+*_printf function*
+
+The function calls to cases_func every time it receives an argument to print, when the argument is null return -1, and at the end of the function, returns the number of characters printed.
+
+![_printf function](https://i.imgur.com/TUuWOX7.png)
+
+*cases_func*
+
+The function scrolls through the arguments to print according to their format, returns the amount of characters every time is done, and prints them on the screen. Every case of format has its own function to print the correct character string.
+
+![cases_func function](https://i.imgur.com/f0nh43q.png)
+
+</body>
 
 <h1>Requirements</h1>
 
@@ -82,4 +99,5 @@ After compiling, run the executable on your console, remember that you will need
 This main function should be on a c file, in the same directory as the repository to the moment of compiling.
 <h1>Collaboration</h1>
 This is a project developed by Ismael Molina and Janis Núñez, for Holberton School Uruguay program.
-</body>
+
+
