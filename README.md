@@ -36,7 +36,7 @@ The function calls to cases_func every time it receives an argument to print, wh
 
 The function scrolls through the arguments to print according to their format, returns the amount of characters every time is done, and prints them on the screen. Every case of format has its own function to print the correct character string.
 
-![cases_func function](https://i.imgur.com/f0nh43q.png)
+![cases_func function](https://i.imgur.com/PmGGG6z.png)
 
 </body>
 
@@ -98,6 +98,6 @@ For running the function, after cloning the repository, is necessary to compile 
 After compiling, run the executable on your console, remember that you will need a main function with the arguments to print with the format.
 This main function should be on a c file, in the same directory as the repository to the moment of compiling.
 <h1>Collaboration</h1>
-This is a project developed by Ismael Molina and Janis Núñez, for Holberton School Uruguay program.
+This is a project developed by Ismael Molina and Janis Núñez, for Holberton School Uruguay.
 
 
