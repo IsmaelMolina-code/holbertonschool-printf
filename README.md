@@ -67,7 +67,7 @@ The repository contains the following files:
 
 <h1>Installation and use</h1>
 
-`Tested on Ubuntu 20.04`
+`Tested on Ubuntu 18.04`
      
 Clone the repository to start:
 
